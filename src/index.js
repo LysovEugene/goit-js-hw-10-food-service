@@ -20,19 +20,12 @@ savedTheme()
 function onThemeSwitcherChange(evt) {
     // console.log(evt.target.checked);
     if (evt.target.checked) {
-        // refs.body.classList.add(Theme.DARK)
-        // refs.body.classList.remove(Theme.LIGHT)
-        // localStorage.setItem("theme", Theme.DARK)
-
+        
         changeTheme(Theme.DARK, Theme.LIGHT)
-        
-        
+             
     } else {
-        // refs.body.classList.add(Theme.LIGHT);
-        // refs.body.classList.remove(Theme.DARK);
-        // localStorage.setItem("theme", Theme.LIGHT);
 
-        changeTheme(Theme.LIGHT, Theme.DARK)
+     changeTheme(Theme.LIGHT, Theme.DARK)
     }
 }    
       
