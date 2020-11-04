@@ -1,13 +1,11 @@
 import cardTpl from "../src/templates/menu-card.hbs";
 import menuList from './menu.json';
 
-// константи
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
 
-// доступ до елементів
 const refs = {
     menu: document.querySelector(".js-menu"),
     body: document.querySelector("body"),
@@ -16,12 +14,9 @@ const refs = {
 
 refs.switcher.addEventListener("change", onThemeSwitcherChange)
 const menuElementMarkup = createMenu(menuList);
-// виводить список продуктів
 refs.menu.insertAdjacentHTML("afterbegin", menuElementMarkup)
 savedTheme()
 
-// functions
-// Змінює фон в залежності від положення вимикача
 function onThemeSwitcherChange(evt) {
     // console.log(evt.target.checked);
     if (evt.target.checked) {
@@ -41,7 +36,6 @@ function onThemeSwitcherChange(evt) {
     }
 }    
       
-// відновлення останньої теми з localStorage, якщо така була
 function savedTheme() {
     const theme = localStorage.getItem("theme")
 
@@ -51,12 +45,10 @@ function savedTheme() {
     }
 }
 
-// Створює розмітку по масиву даних і наданому шаблону через map
 function createMenu(obj) {
   return obj.map(cardTpl).join('');
 }
 
-// змінює тему, запис теми в localStorage
 function changeTheme(currentTheme, oldTheme) {
     refs.body.classList.add(currentTheme);
     refs.body.classList.remove(oldTheme);
